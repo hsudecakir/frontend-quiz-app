@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/3ed2e8cef0.js" crossorigin="anonymous"></script>
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
+</head>
+<body class="light-mode">
+  <div class="container">
+    <div class="circle"></div>
+    <div class="circle2"></div>
+    <div class="header">
+      <div class="quiz-title">
+        <img src="assets/images/accessibility.svg">
+        Accessibility
+      </div>
+      <div class="mode-switch">
+        <i class="fa-regular fa-sun"></i>
+        <label><input id="modeSwitchBtn" class="switch" type="checkbox"></label>
+        <i class="fa-regular fa-moon"></i>
+      </div>
+    </div>
+    <div class="container__wrapper">
+      <div class="welcome-text">
+        <h1>Welcome to the</h1>
+        <h2>Frontend Quiz!</h2>
+        <p>Pick a subject to get started.</p>
+      </div>
+      <div class="selection-buttons">
+        <div class="selection-button"><img src="assets/images/html.svg">HTML</div>
+        <div class="selection-button"><img src="assets/images/css.svg">CSS</div>
+        <div class="selection-button"><img src="assets/images/js.svg">Javascript</div>
+        <div class="selection-button"><img src="assets/images/accessibility.svg">Accessibility</div>
+      </div>
+    </div>
+    <div class="questions__container">
+      <div class="question__content">
+        <p>Question <span id="questionCounter">6</span> of 10</p>
+        <p id="questionContent">Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</p>
+        <div class="question__content__input">
+          <input type="range" id="questionCounterInput" min="0" max="10" value="0" step="1">
+        </div>
+      </div>
+      <div class="question__container__wrapper">
+        <div class="answers">
+          <div data-answer="A" class="answer-box">
+            <div id="choiceA" class="answer-box__wrapper">
+              <span class="choice">A</span>
+              <p class="answer">4.5 : 1</p>
+            </div>
+          <img class="wrong-icon" src="assets/images/wrong.svg">
+          <img class="correct-icon" src="assets/images/correct.svg">  
+          </div>
+          <div data-answer="B" class="answer-box">
+            <div id="choiceB" class="answer-box__wrapper">
+              <span class="choice">B</span>
+              <p class="answer">3 : 1 </p>
+            </div>
+            <img class="wrong-icon" src="assets/images/wrong.svg">
+            <img class="correct-icon" src="assets/images/correct.svg">  
+          </div>
+          <div data-answer="C" class="answer-box">
+            <div id="choiceC" class="answer-box__wrapper">
+              <span class="choice">C</span>
+              <p class="answer">2.5 : 1</p>
+            </div>
+            <img class="wrong-icon" src="assets/images/wrong.svg">
+            <img class="correct-icon" src="assets/images/correct.svg">  
+          </div>
+          <div data-answer="D" class="answer-box">
+            <div id="choiceD" class="answer-box__wrapper">
+              <span class="choice">D</span>
+              <p class="answer">5 : 1</p>
+            </div>
+            <img class="wrong-icon" src="assets/images/wrong.svg">
+            <img class="correct-icon" src="assets/images/correct.svg">  
+          </div>
+        </div>
+        <div class="submit-btn" id="btn">Submit Answer</div>
+        <div id="answerAlert">
+          <img src="assets/images/wrong.svg">
+          <p>Please select an answer</p>
+        </div>
+        <img class="wrong-icon" src="assets/images/wrong.svg">
+        <img class="correct-icon" src="assets/images/correct.svg"> 
+      </div> 
+    </div>
+    <div class="completed__container">
+      <div class="completed__container__wrapper--top">
+        <h3>Quiz completed</h3>
+        <h2>You scored...</h2>
+      </div>
+      <div class="completed__container__wrapper--bottom">
+        <div class="score-board">
+          <div class="quiz-content">
+            <img src="assets/images/accessibility.svg">
+            Accessibility
+          </div>
+          <p id="score">8</p>
+          <p>out of 10</p>
+        </div>
+        <button id="playAgainBtn">Play Again</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
