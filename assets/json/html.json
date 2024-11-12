@@ -1,0 +1,82 @@
+[
+  {
+    "questionText": "What does HTML stand for?",
+    "A": "Hyper Trainer Marking Language",
+    "B": "Hyper Text Markup Language",
+    "C": "Hyperlinks and Text Markup Language",
+    "D": "Home Tool Markup Language",
+    "correctAnswer": "B"
+  },
+  {
+    "questionText": "Which HTML element is used to define the largest heading?",
+    "A": "head",
+    "B": "h6",
+    "C": "h1",
+    "D": "header",
+    "correctAnswer": "C"
+  },
+  {
+    "questionText": "What is the correct HTML element for inserting a line break?",
+    "A": "break",
+    "B": "br",
+    "C": "lb",
+    "D": "newline",
+    "correctAnswer": "B"
+  },
+  {
+    "questionText": "Which HTML attribute is used to define inline styles?",
+    "A": "font",
+    "B": "style",
+    "C": "class",
+    "D": "styles",
+    "correctAnswer": "B"
+  },
+  {
+    "questionText": "Which attribute in HTML is used to provide alternative text for an image?",
+    "A": "src",
+    "B": "title",
+    "C": "alt",
+    "D": "description",
+    "correctAnswer": "C"
+  },
+  {
+    "questionText": "How can you create an ordered list in HTML?",
+    "A": "ul",
+    "B": "ol",
+    "C": "list",
+    "D": "li",
+    "correctAnswer": "B"
+  },
+  {
+    "questionText": "Which attribute in HTML is used to open a link in a new browser tab?",
+    "A": "src",
+    "B": "href",
+    "C": "target",
+    "D": "new",
+    "correctAnswer": "C"
+  },
+  {
+    "questionText": "In HTML, which attribute is used to uniquely identify an element?",
+    "A": "name",
+    "B": "class",
+    "C": "ref",
+    "D": "id",
+    "correctAnswer": "D"
+  },
+  {
+    "questionText": "Which element is used to specify a footer for a document or section?",
+    "A": "foot",
+    "B": "bottom",
+    "C": "footer",
+    "D": "section",
+    "correctAnswer": "C"
+  },
+  {
+    "questionText": "Which tag is used to create a table in HTML?",
+    "A": "table",
+    "B": "tab",
+    "C": "tbody",
+    "D": "tbl",
+    "correctAnswer": "A"
+  }
+]

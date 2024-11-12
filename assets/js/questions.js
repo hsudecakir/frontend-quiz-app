@@ -1,4 +1,4 @@
-export const htmlQuestions = [
+const htmlQuestions = [
   {
     questionText: 'What does HTML stand for?',
     A: 'Hyper Trainer Marking Language',
