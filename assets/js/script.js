@@ -1,9 +1,8 @@
-console.log(cssQuestions);
-async function fetchHTMLQuestions() {
-  const response = await fetch('assets/json/html.json');
-  const data = await response.json();
-  return data;
-}
+// async function fetchHTMLQuestions() {
+//   const response = await fetch('assets/json/html.json');
+//   const data = await response.json();
+//   return data;
+// }
 
 
 function checkLocalStorageTheme(){
@@ -53,66 +52,41 @@ function selectQuizTitle(){
 
 let i = 0;
 let correctAnwers = 0;
+let selectedNumbers = [];
 let randomNumber = Math.floor(Math.random() * 10);
 function pickRandomNumber(){
   let randomNumber = Math.floor(Math.random() * 10);
-}
-let selectedNumbers = [];
-pickRandomNumber();
-console.log(randomNumber);
-
-async function writeQuestions(){
-  const data = await fetchHTMLQuestions();
-  const quizTitle = document.querySelector('.quiz-title');
-  const quizContent = quizTitle.innerText;
   selectedNumbers.push(randomNumber);
-  pickRandomNumber();
-  if(selectedNumbers.includes(randomNumber)){
-    pickRandomNumber();
-  }
+}
+
+pickRandomNumber();
+
+
+function writeQuestions(){
+  // const data = await fetchHTMLQuestions();
+  const quizTitle = document.querySelector('.quiz-title');
+  let quizContent = quizTitle.innerText;
   questionCounter.innerText = i + 1;
   questionCounterInput.value = i;
   if(quizContent === 'HTML'){
-    questionContent.innerText = htmlQuestions[randomNumber].questionText;
-    choiceA.innerHTML = `<span class="choice">A</span>
-            <p class="answer">${htmlQuestions[randomNumber].A}</p>`;
-    choiceB.innerHTML = `<span class="choice">B</span>
-            <p class="answer">${htmlQuestions[randomNumber].B}</p>`;
-    choiceC.innerHTML = `<span class="choice">C</span>
-            <p class="answer">${htmlQuestions[randomNumber].C}</p>`;
-    choiceD.innerHTML = `<span class="choice">D</span>
-            <p class="answer">${htmlQuestions[randomNumber].D}</p>`;
+    quizContent = htmlQuestions;
   } else if(quizContent === 'CSS'){
-    questionContent.innerText = cssQuestions[randomNumber].questionText;
-    choiceA.innerHTML = `<span class="choice">A</span>
-            <p class="answer">${cssQuestions[randomNumber].A}</p>`;
-    choiceB.innerHTML = `<span class="choice">B</span>
-            <p class="answer">${cssQuestions[randomNumber].B}</p>`;
-    choiceC.innerHTML = `<span class="choice">C</span>
-            <p class="answer">${cssQuestions[randomNumber].C}</p>`;
-    choiceD.innerHTML = `<span class="choice">D</span>
-            <p class="answer">${cssQuestions[randomNumber].D}</p>`;
+    quizContent = cssQuestions;
   } else if(quizContent === 'Javascript'){
-    questionContent.innerText = jsQuestions[i].questionText;
-    choiceA.innerHTML = `<span class="choice">A</span>
-            <p class="answer">${jsQuestions[i].A}</p>`;
-    choiceB.innerHTML = `<span class="choice">B</span>
-            <p class="answer">${jsQuestions[i].B}</p>`;
-    choiceC.innerHTML = `<span class="choice">C</span>
-            <p class="answer">${jsQuestions[i].C}</p>`;
-    choiceD.innerHTML = `<span class="choice">D</span>
-            <p class="answer">${jsQuestions[i].D}</p>`;
+    quizContent = jsQuestions;
   } else if(quizContent === 'Accessibility'){
-    questionContent.innerText = accessibilityQuestions[i].questionText;
-    choiceA.innerHTML = `<span class="choice">A</span>
-            <p class="answer">${accessibilityQuestions[i].A}</p>`;
-    choiceB.innerHTML = `<span class="choice">B</span>
-            <p class="answer">${accessibilityQuestions[i].B}</p>`;
-    choiceC.innerHTML = `<span class="choice">C</span>
-            <p class="answer">${accessibilityQuestions[i].C}</p>`;
-    choiceD.innerHTML = `<span class="choice">D</span>
-            <p class="answer">${accessibilityQuestions[i].D}</p>`;
-  } 
+    quizContent = accessibilityQuestions;
+  }
+  // if(selectedNumbers.includes(randomNumber)){
+  //   pickRandomNumber();
+  // } 
+  questionContent.innerText = quizContent[i].questionText;
+  choiceA.innerHTML = `<span class="choice">A</span><p class="answer">${quizContent[i].A}</p>`;
+  choiceB.innerHTML = `<span class="choice">B</span><p class="answer">${quizContent[i].B}</p>`;
+  choiceC.innerHTML = `<span class="choice">C</span><p class="answer">${quizContent[i].C}</p>`;
+  choiceD.innerHTML = `<span class="choice">D</span><p class="answer">${quizContent[i].D}</p>`;
+
+
   handleInput();
 }
 
@@ -156,64 +130,33 @@ function showCorrectAnswer(){
     }
     const selectedAnswer = document.querySelector('.selectedAnswerBtn');
     const quizTitle = document.querySelector('.quiz-title');
-    const quizContent = quizTitle.innerText;
+    let quizContent = quizTitle.innerText;
     if(quizContent === 'HTML'){
-      if(htmlQuestions[i].correctAnswer == selectedAnswer.dataset.answer){
-        selectedAnswer.classList.add('correctAnswerBtn', 'correct-answer');
-        correctAnwers++;
-      } else{
-        selectedAnswer.classList.add('wrongAnswerBtn');
-        for (const answer of answers) {
-          if(answer.dataset.answer == htmlQuestions[i].correctAnswer){
-            answer.classList.add('correct-answer');
-          }
-        }
-      }
+      quizContent = htmlQuestions;
     } else if(quizContent === 'CSS'){
-      if(cssQuestions[i].correctAnswer == selectedAnswer.dataset.answer){
-        selectedAnswer.classList.add('correctAnswerBtn', 'correct-answer');
-        correctAnwers++;
-      } else{
-        selectedAnswer.classList.add('wrongAnswerBtn');
-        for (const answer of answers) {
-          if(answer.dataset.answer == cssQuestions[i].correctAnswer){
-            answer.classList.add('correct-answer');
-          }
-        }
-      }
+      quizContent = cssQuestions;
     } else if(quizContent === 'Javascript'){
-      if(jsQuestions[i].correctAnswer == selectedAnswer.dataset.answer){
-        selectedAnswer.classList.add('correctAnswerBtn', 'correct-answer');
-        correctAnwers++;
-      } else{
-        selectedAnswer.classList.add('wrongAnswerBtn');
-        for (const answer of answers) {
-          if(answer.dataset.answer == jsQuestions[i].correctAnswer){
-            answer.classList.add('correct-answer');
-          }
-        }
-      }
+      quizContent = jsQuestions;
     } else if(quizContent === 'Accessibility'){
-      if(accessibilityQuestions[i].correctAnswer == selectedAnswer.dataset.answer){
-        selectedAnswer.classList.add('correctAnswerBtn', 'correct-answer');
-        correctAnwers++;
-      } else{
-        selectedAnswer.classList.add('wrongAnswerBtn');
-        for (const answer of answers) {
-          if(answer.dataset.answer == accessibilityQuestions[i].correctAnswer){
-            answer.classList.add('correct-answer');
-          }
+      quizContent = accessibilityQuestions;
+    }
+    if(quizContent[i].correctAnswer == selectedAnswer.dataset.answer){
+      selectedAnswer.classList.add('correctAnswerBtn', 'correct-answer');
+      correctAnwers++;
+    } else{
+      selectedAnswer.classList.add('wrongAnswerBtn');
+      for (const answer of answers) {
+        if(answer.dataset.answer == quizContent[i].correctAnswer){
+          answer.classList.add('correct-answer');
         }
       }
-    } 
-    
+    }
     if(i === 9){
       btn.innerText = 'Complete Quiz';
     } else{
       btn.innerText = 'Next Question';
     }
   }
-  console.log(correctAnwers);
 }
 
 function showNextQuestion(){

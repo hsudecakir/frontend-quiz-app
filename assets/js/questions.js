@@ -178,7 +178,7 @@ const jsQuestions = [
     A: '//',
     B: '/*',
     C: '#',
-    D: '<!--',
+    D: '!--',
     correctAnswer: "A"
   },
   {
@@ -244,5 +244,88 @@ const jsQuestions = [
     C: 'To stop code execution',
     D: 'To execute code immediately',
     correctAnswer: "B"
+  }
+];
+
+const accessibilityQuestions = [
+  {
+    questionText: 'What does WCAG stand for?',
+    A: 'Web Content Accessibility Guidelines',
+    B: 'World Content Accessibility Guide',
+    C: 'Website Color Accessibility Guide',
+    D: 'Web Coding Accessibility Guidelines',
+    correctAnswer: "A"
+  },
+  {
+    questionText: 'Which HTML attribute provides a text alternative for screen readers on an image?',
+    A: 'src',
+    B: 'title',
+    C: 'alt',
+    D: 'aria-label',
+    correctAnswer: "C"
+  },
+  {
+    questionText: 'What role does the `aria-label` attribute play in accessibility?',
+    A: 'Defines the label for a form input',
+    B: 'Provides a description for images',
+    C: 'Provides an accessible label for elements',
+    D: 'Identifies required form fields',
+    correctAnswer: "C"
+  },
+  {
+    questionText: 'Which HTML element should be used for main content on a page to improve accessibility?',
+    A: 'section',
+    B: 'header',
+    C: 'main',
+    D: 'article',
+    correctAnswer: "C"
+  },
+  {
+    questionText: 'What is the recommended minimum color contrast ratio for normal text to be accessible?',
+    A: '2:1',
+    B: '3:1',
+    C: '4.5:1',
+    D: '7:1',
+    correctAnswer: "C"
+  },
+  {
+    questionText: 'Which ARIA attribute should be used to notify users of a dynamic change on the page?',
+    A: 'aria-role',
+    B: 'aria-live',
+    C: 'aria-hidden',
+    D: 'aria-checked',
+    correctAnswer: "B"
+  },
+  {
+    questionText: 'Which element is commonly used to create keyboard-accessible dropdown menus?',
+    A: 'div',
+    B: 'button',
+    C: 'span',
+    D: 'p',
+    correctAnswer: "B"
+  },
+  {
+    questionText: 'Which landmark role should be used to identify the primary navigation of a webpage?',
+    A: 'main',
+    B: 'footer',
+    C: 'banner',
+    D: 'navigation',
+    correctAnswer: "D"
+  },
+  {
+    questionText: 'What does the `tabindex="0"` attribute do?',
+    A: 'Removes an element from the tab order',
+    B: 'Makes an element tabbable in the natural order',
+    C: 'Focuses the element when the page loads',
+    D: 'Hides the element from screen readers',
+    correctAnswer: "B"
+  },
+  {
+    questionText: 'Which element is preferred for structuring headings to create a logical hierarchy?',
+    A: 'h1 to h6 tags',
+    B: 'div',
+    C: 'p',
+    D: 'span',
+    correctAnswer: "A"
   }
 ];
